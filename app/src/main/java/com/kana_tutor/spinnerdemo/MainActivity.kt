@@ -16,25 +16,19 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         spinner.setOnItemSelectedListener(this)
         val categories: MutableList<String> = mutableListOf()
         for (i in 0..20) categories.add(String.format(fmtString, i))
+        // Supply your own text view to have control over text size and
+        // color.  I couldn't get Spinner->android:dropDownWidth wrap content
+        // to work but hard-code width seems to work ok.  You can use same text
+        // view for drop-down with 0 padding and for Spinner and set spinner
+        // padding.  Background image can be changed with android:background
         val dataAdapter = ArrayAdapter(
             this
-            , android.R.layout.simple_spinner_item
+            , R.layout.spinner_textview
+            // , android.R.layout.simple_spinner_item
             , categories
         )
-        /*
-         * The code below works fine but you don't get the radio button
-         * on the dropdown menu.  Changing from
-         *  android.R.layout.simple_spinner_dropdown_item
-         * to
-         *  android.R.layout.select_dialog_singlechoice
-         * gives the radio button.
         dataAdapter.setDropDownViewResource(
-            android.R.layout.simple_spinner_dropdown_item);
-            */
-        // use android.R.layout.select_dialog_singlechoice for
-        // radio button in dropdown.
-        dataAdapter.setDropDownViewResource(
-            android.R.layout.select_dialog_singlechoice
+            R.layout.spinner_textview
         )
         spinner.adapter = dataAdapter
         return spinner
@@ -58,10 +52,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val s = createSpinner(R.id.layout_spinner, "activity spinner %02d")
+        val s = createSpinner(R.id.layout_spinner, "activity spinner %02d")!!
         // set initial selection to the fifth element (= 06)
         // set initial selection to the fifth element (= 06)
-        s!!.setSelection(5)
+        s.setSelection(5)
 
     }
 }
