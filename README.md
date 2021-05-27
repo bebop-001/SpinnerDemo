@@ -1,9 +1,9 @@
 SpinnerDemo
 ===========
 
-Really trivial code demoing a spinner.  Originally
-written 5 years ago in Java and moved to Kotlin.
+Demo of android spinners on screen and in menu/action bar in Kotlin with dark/light
+mode.
 
 4/7/2021<br>
-Added code to allow day-night and added spinner code
-to set menues appropriately.
+Added menu/action bar spinner.  Added code to allow day-night and added code
+to set menu colors appropriately.
