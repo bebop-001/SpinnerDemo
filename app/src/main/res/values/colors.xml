@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="spinner_textview_text">
+        @color/material_grey_50</color>
+
+    <color name="spinner_dropdown_bg">@color/material_grey_50</color>
+    <color name="spinner_dropdown_text">@color/material_grey_850</color>
+
 </resources>
